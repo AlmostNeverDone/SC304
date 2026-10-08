@@ -8,17 +8,17 @@ Microsoft Entra ID 多重要素驗證 (MFA) 與條件式存取
 
 <h2>Outline｜專題簡介</h2>
 
-This project demonstrates password security management in Microsoft Entra ID, including password protection policies, Smart Lockout, custom banned passwords, and Self-Service Password Reset (SSPR).
+This project demonstrates identity authentication and access control management in Microsoft Entra ID, including multifactor authentication (MFA), MFA account lockout, and Conditional Access policy configuration.
 
-本專題展示 Microsoft Entra ID 中的密碼安全管理操作，包括密碼保護政策、Smart Lockout、自訂禁止密碼清單，以及自助式密碼重設(SSPR)。
+本專題展示 Microsoft Entra ID 中的身分驗證與存取控制管理，包括多重要素驗證 (MFA)、MFA 帳號鎖定，以及條件式存取政策設定。
 
-This explores how password protection policies can help prevent the use of weak or commonly used passwords, while SSPR enables users to securely recover access to their accounts through configured authentication methods.
+It explores how MFA provides an additional layer of authentication beyond passwords, while Conditional Access enables administrators to apply targeted access controls based on users and cloud resources.
 
-本文探索如何透過密碼保護政策降低使用弱密碼或常見密碼的風險，同時透過 SSPR 讓使用者使用預先設定的驗證方式，安全地恢復帳號存取權限。
+內容進一步探討 MFA 如何在密碼之外提供額外的身分驗證層級，以及 Conditional Access 如何讓管理員依據使用者與雲端資源套用特定的存取控制。
 
-It also includes practical validation of password protection and password reset operations, followed by reviewing Microsoft Entra audit logs to verify the results and improve visibility into identity management activities.
+The Conditional Access What If tool is also used to evaluate policy behaviour across different application access scenarios, demonstrating how access policies can be validated before or during deployment.
 
-亦包含密碼保護與密碼重設功能的實際驗證，並透過 Microsoft Entra 稽核紀錄檢查操作結果，以提升身分管理活動的可視性。
+此外，透過 Conditional Access What If 工具評估不同應用程式存取情境下的政策行為，以展示如何在政策部署前或部署期間驗證存取控制結果。
 
 <br/>
 
@@ -26,32 +26,32 @@ It also includes practical validation of password protection and password reset 
 
 <h2>Key Learning Outcomes｜主要學習成果</h2>
 
-* Configure Microsoft Entra password protection policies<br/>
-設定 Microsoft Entra 密碼保護政策
+* Enable multifactor authentication (MFA) for a selected user<br/>
+為指定使用者啟用多重要素驗證 (MFA)
 
-* Configure Smart Lockout to reduce password-based attack risks<br/>
-設定 Smart Lockout，以降低密碼型攻擊風險
+* Review MFA service settings and available authentication controls<br/>
+檢視 MFA 服務設定與可用的身分驗證控制
 
-* Create and enforce a custom banned password list<br/>
-建立並啟用自訂禁止密碼清單
+* Configure MFA account lockout settings<br/>
+設定 MFA 帳號鎖定機制
 
-* Configure Self-Service Password Reset (SSPR) for a selected group<br/>
-為指定群組設定自助式密碼重設 (SSPR)
+* Create and configure a Conditional Access policy<br/>
+建立並設定 Conditional Access 政策
 
-* Configure SSPR authentication methods and registration requirements<br/>
-設定 SSPR 驗證方式與註冊要求
+* Configure user inclusion and administrative exclusions<br/>
+設定使用者納入範圍與管理員排除條件
 
-* Configure password reset notifications<br/>
-設定密碼重設通知
+* Restrict access to a selected cloud application<br/>
+限制指定雲端應用程式的存取
 
-* Validate password protection and self-service password reset<br/>
-驗證密碼保護與自助式密碼重設功能
+* Apply block access controls through Conditional Access<br/>
+透過 Conditional Access 套用封鎖存取控制
 
-* Review password reset activities through Microsoft Entra audit logs<br/>
-透過 Microsoft Entra 稽核紀錄檢查密碼重設活動
+* Validate Conditional Access policies using the What If tool<br/>
+使用 What If 工具驗證 Conditional Access 政策
 
-* Understand how password protection and SSPR support secure identity lifecycle management<br/>
-理解密碼保護與 SSPR 如何支援安全的身分生命週期管理
+* Compare policy outcomes across different application access scenarios<br/>
+比較不同應用程式存取情境下的政策結果
 
 <br/>
 
@@ -59,21 +59,22 @@ It also includes practical validation of password protection and password reset 
 
 <h2>Tools and Concepts Covered｜涵蓋工具與概念</h2>
 
-| Category 分類                                      | Tools / Concepts 工具 / 概念       |
+| Category (分類)                                      | Tools / Concepts (工具 / 概念)       |
 | ------------------------------------------------ | ------------------------------ |
 | Cloud Identity Management <br/>雲端身分管理          | Microsoft Entra ID |
 | Identity Administration <br/>身分管理                | Microsoft Entra Admin Center |
-| Premium Identity Features <br/>進階身分安全功能       | Microsoft Entra ID P2 (Trial) |
-| Password Security <br/>密碼安全                     | Password Protection |
-| Account Lockout <br/>帳號鎖定機制                    | Smart Lockout |
-| Password Restrictions <br/>密碼限制                 | Custom Banned Password List |
-| Password Recovery <br/>密碼復原 (SSPR)               | Self-Service Password Reset  |
-| Group-Based Configuration <br/>群組式設定            | Selected Group |
-| Authentication Methods <br/>身分驗證方式              | Email, Mobile Phone, Mobile App Code |
-| User Registration <br/>使用者註冊                    | SSPR Registration |
-| Security Notifications <br/>安全通知                | Password Reset Notifications |
-| Security Validation <br/>安全功能驗證                | Password Protection and SSPR Testing |
-| Auditing and Monitoring <br/>稽核與監控              | Microsoft Entra Audit Logs |
+| Multifactor Authentication <br/>多重要素驗證          | Microsoft Entra MFA |
+| User-Based MFA <br/>使用者式 MFA                    | Per-user MFA |
+| MFA Configuration <br/>MFA 設定                    | MFA Service Settings |
+| Account Protection <br/>帳號保護                    | MFA Account Lockout |
+| Access Control <br/>存取控制                        | Conditional Access |
+| Policy Assignments <br/>政策指派                    | Users and Groups |
+| Administrative Exclusions <br/>管理員排除            | Excluded Users |
+| Cloud Resource Control <br/>雲端資源控制             | Target Resources |
+| Access Controls <br/>存取控制措施                    | Block Access |
+| Policy Evaluation <br/>政策評估                     | Conditional Access What If |
+| Application-Based Access <br/>應用程式存取控制         | Sway, Office 365 |
+| Policy Validation <br/>政策驗證                     | Applied and Not Applied Policies |
 
 
 <br/>
