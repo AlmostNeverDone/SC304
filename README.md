@@ -73,7 +73,7 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 | Cloud Resource Control <br/>雲端資源控制             | Target Resources |
 | Access Controls <br/>存取控制措施                    | Block Access |
 | Policy Evaluation <br/>政策評估                     | Conditional Access What If |
-| Application-Based Access <br/>應用程式存取控制         | Sway, Office 365 |
+| Application-Based Access <br/>應用程式存取控制         | Office 365 |
 | Policy Validation <br/>政策驗證                     | Applied and Not Applied Policies |
 
 
@@ -89,18 +89,12 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 * Microsoft Entra ID tenant (Entra ID 租戶環境)</b>
 * Microsoft Entra ID P2 - Trial (Microsoft Entra ID P2 - 試用版)</b>
 * Microsoft Entra admin center (Microsoft Entra 管理中心)</b>
-* Microsoft 365 admin center (Microsoft 365 管理中心)</b>
 
 [Tasks]
 
-* Configure Password Protection (設定密碼保護政策)
-* Validate Password Protection (驗證密碼保護政策)
-* Enable SSPR for a Group (為群組啟用 SSPR)
-* Configure SSPR Authentication Methods (設定 SSPR 驗證方式)
-* Configure SSPR Registration and Notifications (設定 SSPR 註冊與通知)
-* Register Password Reset Methods (註冊密碼重設驗證方式)
-* Test Self-Service Password Reset (測試自助式密碼重設)
-* Review Password Reset Audit Logs (檢查密碼重設稽核紀錄)
+* Configure MFA Account Lockout (設定 MFA 帳號鎖定)
+* Configure Conditional Access (設定 Conditional Access)
+* Validate Conditional Access with What If (使用 What If 驗證 Conditional Access)
 <br/>
 
 ---------
@@ -108,64 +102,31 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 <h2>Practice｜實踐</h2> <p align="center">
 
 <p align="center">
-<b>Task 1: Configure Password Protection<br/> (設定密碼保護政策)</b><br/>
+<b>Task 1: Configure MFA Account Lockout<br/> (設定 MFA 帳號鎖定)</b><br/>
 <img src="https://i.imgur.com/9fc7EYm.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Configured Smart Lockout to mitigate password-guessing attacks.<br/>
-配置智慧鎖定功能以減輕密碼猜測攻擊<br/>
-* Enable the custom banned password list (corresponding to a fictional company's name, location, and <br/>flagship product, respectively) to restrict the use of easily guessable, organization-related terms.<br/>
-啟用自訂停用密碼清單（分別對應於虛構的公司名稱、地點和旗艦產品），<br/>以限制使用容易猜測的、與組織相關的術語<br/>
 <br />
-<br />
-<b>Task 2: Validate Password Protection<br/> (驗證密碼保護政策)</b><br/>
+<b>Task 2-1: Configure User Assignment and Exclusion<br/> (設定使用者指派與排除)</b><br/>
 <img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Tested the custom banned password policy using a non-administrator account and <br/>verified that a restricted test password was rejected.<br/>
-使用非管理員測試帳號測試自訂禁止密碼政策，並確認受限制的測試密碼遭到拒絕<br/>
+<br />
+<b>Task 2-2: Configure the Target Resource<br/> (設定目標資源)</b><br/>
+<img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
-<b>Task 3: Enable SSPR for a Group<br/> (為群組啟用 SSPR)</b><br/>
+<b>Task 2-3: Configure Block Access<br/> (設定封鎖存取)</b><br/>
+<img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<br />
+<b>Task 3-1: Validate the Block Policy with What If<br/> (使用 What If 驗證封鎖政策)</b><br/>
 <img src="https://i.imgur.com/hWFb6Jn.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
-* Enabled SSPR for the Project23 group to demonstrate controlled deployment of password recovery capabilities.<br/>
-為 Project23 群組啟用自助式密碼重設 (SSPR)，以示範密碼復原功能的受控部署<br/>
+* Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
+透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
 <br />
 <br />
-<b>Task 4-1: Setting the Number of Authentication Methods<br/> (設定身份驗證方法的數量)</b><br/>
-<img src="https://i.imgur.com/l3vdmmE.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 4-2: Configure the Authentication Method Policies<br/> (配置身份驗證方法策略)</b><br/>
-<img src="https://i.imgur.com/hr6XF6W.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 5-1: Configure SSPR Registration<br/> (設定 SSPR 註冊)</b><br/>
-<img src="https://i.imgur.com/V5hgOG4.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 5-2: Configure SSPR Notifications<br/> (設定 SSPR 通知)</b><br/>
-<img src="https://i.imgur.com/hp4CRBo.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-<b>Task 6: Register Password Reset Methods<br/> (註冊密碼重設驗證方式)</b><br/>
-<img src="https://i.imgur.com/hfFivIl.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-* Registered password recovery authentication methods using a non-administrator test account <br/>and verified the registration status in Microsoft Entra Security info.<br/>
-使用非管理員測試帳號註冊密碼復原驗證方式，並於 Microsoft Entra Security info 確認註冊狀態
-<br />
-<br />
-<b>Task 7: Test Self-Service Password Reset<br/> (測試自助式密碼重設)</b><br/>
-<img src="https://i.imgur.com/3aZhNjz.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-* Successfully completed Self-Service Password Reset using a non-administrator test account <br/>and verified that account access could be restored with the new password.<br/>
-使用非管理員測試帳號成功完成自助式密碼重設，並驗證可透過新密碼恢復帳號存取<br/>
-<br />
-<br />
-<b>Task 8: Review Password Reset Audit Logs<br/> (檢查密碼重設稽核紀錄)</b><br/>
+<b>Task 3-2: Compare Conditional Access Results<br/> (比較 Conditional Access 政策結果)</b><br/>
 <img src="https://i.imgur.com/DRi94xz.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-* Reviewed Microsoft Entra audit logs and verified the successful self-service password reset event<br/> to demonstrate visibility into password recovery activities.<br/>
-檢查 Microsoft Entra 稽核紀錄，確認自助式密碼重設成功事件，<br/>以展示密碼復原活動的可視性與稽核能力<br/>
 <br />
 <br />
 
