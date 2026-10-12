@@ -173,17 +173,18 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 
 <h2>Results｜專題結論</h2>
 
-This project demonstrated password security and recovery management in Microsoft Entra ID by combining password protection controls with Self-Service Password Reset (SSPR). Smart Lockout and a custom banned password list were configured to reduce the risks associated with repeated password-guessing attempts and predictable organisation-related passwords.
+This project demonstrated identity authentication protection and access control management in Microsoft Entra ID through MFA account lockout and Conditional Access policies. MFA account lockout was configured to limit repeated denied authentication attempts and provide additional protection against abusive MFA requests.
 
-本專題透過整合密碼保護控制與自助式密碼重設 (SSPR)，實作 Microsoft Entra ID 中的密碼安全與復原管理。藉由設定 Smart Lockout 與自訂禁止密碼清單，降低重複密碼猜測及使用容易預測的組織相關密碼所帶來的風險。
+本專題透過 MFA 帳號鎖定與 Conditional Access 政策，實作 Microsoft Entra ID 中的身分驗證防護與存取控制管理。MFA 帳號鎖定可限制重複遭拒的驗證嘗試，並為異常或濫用的 MFA 請求提供額外防護。
 
-SSPR was deployed to a selected group with defined authentication, registration, and notification requirements. The project extended beyond administrative configuration by validating password protection and password recovery from a user perspective, demonstrating how registered authentication methods can support secure account recovery without direct administrator intervention.
+Conditional Access was configured with specific user assignments, administrative exclusions, target resources, and block access controls. This demonstrated how access policies can be scoped to selected identities and cloud resources rather than being applied universally across the tenant.
 
-SSPR 以指定群組方式部署，並設定身分驗證、註冊及通知要求。本專題進一步從使用者角度驗證密碼保護與帳號復原流程，展示如何透過已註冊的驗證方式，在無需管理員直接介入的情況下安全恢復帳號存取。
+Conditional Access 則透過指定使用者、管理員排除、目標資源及封鎖存取控制進行設定，展示存取政策如何針對特定身分與雲端資源套用，而非一律套用至整個租戶環境。
 
-Microsoft Entra audit logs were also reviewed to provide visibility into password recovery activities, connecting policy configuration, user validation, and administrative monitoring within a single identity security workflow.
+The Conditional Access What If tool was used to compare policy outcomes across different target resources. The analysis demonstrated how the same user can receive different policy evaluation results depending on whether the requested application matches the configured policy scope.
 
-最後透過 Microsoft Entra 稽核紀錄檢查密碼復原活動，將政策設定、使用者驗證與管理端監控整合為完整的身分安全工作流程。
+最後使用 Conditional Access What If 工具比較不同目標資源下的政策結果，確認相同使用者會依據所存取的應用程式是否符合政策範圍，而產生不同的政策評估結果。
+
 
 <br />
 <br />
@@ -195,21 +196,21 @@ Microsoft Entra audit logs were also reviewed to provide visibility into passwor
 <h2>Security Insight｜安全洞察</h2>
 
 
-Password security requires multiple complementary controls rather than relying on password complexity alone. Smart Lockout helps reduce repeated password-guessing attempts, while banned password policies restrict predictable terms that may otherwise satisfy basic password requirements. Together, these controls strengthen password-based authentication at both the sign-in and password creation stages.
+Identity protection is more effective when authentication controls and access policies are applied in layers. MFA account lockout can help limit repeated denied authentication requests, while Conditional Access provides more granular control over who can access specific resources and under what conditions.
 
-密碼安全需要多種互補控制，而不能只依賴密碼複雜度。Smart Lockout 有助於降低重複密碼猜測行為，而禁止密碼政策則限制即使符合基本密碼要求、但仍容易被預測的詞彙。兩者結合後，可分別從登入與密碼建立階段強化密碼式驗證的安全性。
+身分安全在採用多層次控制時能發揮更完整的效果。MFA 帳號鎖定可限制重複遭拒的驗證請求，而 Conditional Access 則能進一步控制哪些使用者可存取特定資源，以及存取行為需要符合哪些條件。
 
-SSPR introduces an important balance between security and usability. Allowing users to recover their own accounts can reduce administrative workload and improve availability, but its security depends on properly scoped deployment, reliable authentication methods, and the protection of registered recovery information. Enabling SSPR for a selected group provides a controlled way to validate these settings before broader deployment.
+Conditional Access policies should be scoped carefully. Including only the required users and resources helps reduce unnecessary access disruption, while excluding appropriate administrative or emergency-access accounts can reduce the risk of accidentally locking administrators out of the environment.
 
-SSPR 則呈現安全性與可用性之間的重要平衡。允許使用者自行恢復帳號可以降低管理負擔並提升可用性，但其安全性仍取決於適當的部署範圍、可靠的身分驗證方式，以及已註冊復原資訊的保護。先針對指定群組啟用 SSPR，可在擴大部署前以受控方式驗證相關設定。
+Conditional Access 政策應謹慎設定適用範圍。僅納入必要的使用者與資源，可降低非預期的存取中斷；適當排除管理帳號或緊急存取帳號，則有助於避免政策設定錯誤造成管理人員無法進入環境。
 
-Password recovery should also remain auditable. Self-service capabilities reduce direct administrator involvement but do not remove the need for visibility and accountability. Reviewing Microsoft Entra audit logs allows administrators to trace password reset activities and provides evidence that can support troubleshooting, governance, and security investigations.
+Policy configuration alone does not confirm that access controls will behave as intended. The What If tool provides a practical way to evaluate Conditional Access decisions by comparing applicable and non-applicable scenarios before relying on the policy in normal operations.
 
-密碼復原流程同樣必須具備可稽核性。自助式功能雖然減少管理員直接介入，但不代表可以放棄可視性與責任追蹤。透過 Microsoft Entra 稽核紀錄，管理員仍可追查密碼重設活動，並為故障排除、治理與安全事件調查提供可驗證的紀錄。
+僅完成政策設定並不能證明存取控制一定會依照預期運作。透過 What If 工具比較政策適用與不適用的情境，可在實際依賴政策進行存取控制前，更清楚地驗證 Conditional Access 的判斷結果。
 
-The Smart Lockout values used in this project were based on the lab requirements and should not be treated as universal production settings. In a real environment, password protection, lockout thresholds, recovery methods, and notification policies should be adjusted according to organisational risk, user requirements, and operational impact.
+The MFA account lockout values and Conditional Access scenarios used in this project were based on the lab environment and should not be treated as universal production settings. In a real organisation, authentication thresholds, policy exclusions, target resources, and enforcement modes should be adjusted according to risk, operational requirements, and potential business impact.
 
-本專題使用的 Smart Lockout 參數依據實驗要求設定，不應視為所有正式環境皆適用的標準值。在實際組織環境中，密碼保護、鎖定閾值、復原方式及通知政策仍應依據組織風險、使用者需求與營運影響進行調整。
+本專題使用的 MFA 帳號鎖定參數與 Conditional Access 情境依據實驗環境設定，不應視為所有正式環境皆適用的標準值。在實際組織中，驗證閾值、政策排除條件、目標資源及強制執行模式，仍應依據風險、營運需求與可能造成的業務影響進行調整。
 
 
 <br />
