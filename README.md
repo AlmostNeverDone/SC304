@@ -103,30 +103,30 @@ The Conditional Access What If tool is also used to evaluate policy behaviour ac
 
 <p align="center">
 <b>Task 1: Configure MFA Account Lockout<br/> (設定 MFA 帳號鎖定)</b><br/>
-<img src="https://i.imgur.com/9fc7EYm.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/WdPIUHO.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 2-1: Configure User Assignment and Exclusion<br/> (設定使用者指派與排除)</b><br/>
-<img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/CTmcBxT.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 2-2: Configure the Target Resource<br/> (設定目標資源)</b><br/>
-<img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1F6Q4qY.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 2-3: Configure Block Access<br/> (設定封鎖存取)</b><br/>
-<img src="https://i.imgur.com/v4w10mu.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/P0uvv2U.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 <b>Task 3-1: Validate the Block Policy with What If<br/> (使用 What If 驗證封鎖政策)</b><br/>
-<img src="https://i.imgur.com/hWFb6Jn.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2W8NL6B.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 * Used the Conditional Access What If tool to verify that the Office 365 block policy applies to the selected test user. <br/>The policy remained in Report-only mode without enforcing the access restriction.<br/>
 透過 Conditional Access What If 工具驗證 Office 365 封鎖政策適用於指定測試使用者；<br/>政策維持 Report-only 模式，並未實際強制執行存取限制<br/>
 <br />
 <br />
 <b>Task 3-2: Compare Conditional Access Results<br/> (比較 Conditional Access 政策結果)</b><br/>
-<img src="https://i.imgur.com/DRi94xz.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/viFvKGi.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <br />
 <br />
 
